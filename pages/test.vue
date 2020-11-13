@@ -1,7 +1,11 @@
 <template>
   <div>
-    <div class="mt_30">测试页面</div>
+    <h1 class="mt_30">这是测试页面</h1>
     <nuxt-link to="/">首页</nuxt-link>
+    <div class="img-box" style="background: red">
+      1k图标<img src="~/assets/img/selected-depot.png" />
+    </div>
+    <div class="img-box">2k图标<img src="~/assets/img/tf-logo.png" /></div>
   </div>
 </template>
 
@@ -15,11 +19,34 @@ export default {
   },
   asyncData(context) {
     console.log('context', context)
-    return { project: 'nuxt' }
+    // return { project: 'nuxt' }
+    return new Promise((resolve, reject) => {
+      resolve({ project: 'nuxt' })
+      // setTimeout(() => {
+      //   resolve({ project: 'nuxt' })
+      // }, 1000)
+    })
   },
   data() {
     return {
       name: 'hello',
+      title: 'Hello World!',
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'miaoshu',
+          name: 'miaoshu',
+          content: 'wo de miaoshu',
+        },
+        // {
+        //   name: 'description',
+        //   content: '',
+        // },
+      ],
     }
   },
   computed: {
