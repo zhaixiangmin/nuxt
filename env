@@ -1,0 +1,11 @@
+module.exports = {
+  dev: {
+    baseUrl: 'http://139.9.245.12:38080'   // 开发服务器地址
+  },
+  test: {
+    baseUrl: 'http://10.201.2.5:38080'   // 测试服务器地址
+  },
+  prod: {
+    baseUrl: '/'  // 正式服务器地址
+  }
+}
